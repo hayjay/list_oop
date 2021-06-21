@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+{% block page_title %}All List{% endblock %}
+{% block page_head %}
+{{ parent() }}
+
+{% endblock %}
+
+{% block page_name %}
+    All List
+
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="input-group col-8 bg-white" id="todo-container">
+        <div class="input-group-prepend  border-white" id="show_below_arrow_in_task_form">
+            <div class="input-group-text bg-white border-white text-todo-grey col-1">
+                <i class="fa fa-2x fa-chevron-down"></i>
+            </div>
+        </div>
+        <input id="task_name" class="form-control form-control-lg border-white" type="text" placeholder="Enter List Name Here?">
+        <div class="col-12" id="taskList" style="display: none">
+
+        </div>
+        <div id="task_tabs" class="col-12 text-secondary" style="display: none">
+            <nav class="navbar navbar-expand">
+                <div class="col-3 navbar-nav">
+                    <label id="pending_task_count" class="my-2 my-lg-0"></label>
+                </div>
+                <div class="col-6">
+                    <ul class="navbar-nav mr-auto justify-content-center" id="taskTabs">
+                        <li class="nav-item mr-2">
+                            <a class="nav-link border border-todo-grey" onclick="getTaskList($(this))">All </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+<script src="./assets/js/Task/index.js"></script>
+{% endblock %}
+

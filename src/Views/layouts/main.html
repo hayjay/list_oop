@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>
+        {% block page_title %}
+        {% endblock %}
+    </title>
+    {% endblock %}
+    <script src="./assets/js/jQuery-2.2.0.min.js"></script>
+</head>
+<body class="bg-light">
+<div id="container" class="container">
+
+    <nav class="nav" style="min-height: 100pt">
+        <span class="fixed-top text-center bg-todo-brand" style="font-size: 50pt;">
+                {% block page_name %}
+                {% endblock %}
+        </span>
+    </nav>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <!-- SIDEBAR -->
+            <div class="col-lg-4">
+                <div class="row">
+                    <a href="/home" > <i class="fa fa-book" aria-hidden="true"></i> All Lists</a> <br> <br>
+                </div>
+                <div class="row">
+                    <a href="/activitylog" > <i class="fa fa-book" aria-hidden="true"></i> Transaction Log</a> <br> <br>
+                </div>
+                <div class="row">
+                    <a href="/"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </div>
+            </div>
+            {% block page_content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<script src="./assets/js/Common/ajax.js"></script>
+<script src="./assets/js/Common/utility.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+
+</html>
